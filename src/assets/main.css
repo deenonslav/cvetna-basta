@@ -1,0 +1,89 @@
+/* Roze tema "Cvetna bašta": šećerna vuna, malina i šljiva sa zlatnim akcentom */
+:root,
+[data-bs-theme="light"] {
+    --bs-body-bg: #fff6f9;
+    --bs-body-color: #3a1428;
+    --bs-primary: #c9407a;
+    --bs-primary-rgb: 201, 64, 122;
+    --bs-link-color: #b0305f;
+    --bs-link-color-rgb: 176, 48, 95;
+    --bs-link-hover-color: #7d1d44;
+    --bs-border-color: #f0d3df;
+    --bs-border-radius: 0.75rem;
+    --bs-border-radius-lg: 1.25rem;
+    --zb-gold: #f2a516;
+    --zb-plum: #4a1233;
+}
+
+body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.btn {
+    border-radius: 50rem;
+}
+
+.btn-primary {
+    --bs-btn-bg: #c9407a;
+    --bs-btn-border-color: #c9407a;
+    --bs-btn-hover-bg: #a82f62;
+    --bs-btn-hover-border-color: #a82f62;
+    --bs-btn-active-bg: #7d1d44;
+    --bs-btn-active-border-color: #7d1d44;
+    --bs-btn-disabled-bg: #c9407a;
+    --bs-btn-disabled-border-color: #c9407a;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #b0305f;
+    --bs-btn-border-color: #c9407a;
+    --bs-btn-hover-bg: #c9407a;
+    --bs-btn-hover-border-color: #c9407a;
+    --bs-btn-active-bg: #a82f62;
+    --bs-btn-active-border-color: #a82f62;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #c9407a;
+    box-shadow: 0 0 0 0.25rem rgba(201, 64, 122, 0.2);
+}
+
+.form-check-input:checked {
+    background-color: #c9407a;
+    border-color: #c9407a;
+}
+
+.navbar-botanic {
+    background: linear-gradient(90deg, #4a1233, #7d1d44);
+}
+
+.card {
+    border-color: var(--bs-border-color);
+    box-shadow: 0 2px 10px rgba(122, 29, 68, 0.06);
+}
+
+.badge.text-bg-light {
+    background-color: #fde9f1 !important;
+    color: #7d1d44 !important;
+    border-color: #f0c4d6 !important;
+}
+
+.star {
+    color: var(--zb-gold);
+    white-space: nowrap;
+}
+
+.swal2-container {
+    z-index: 2000;
+}
+
+.swal2-radio {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.4rem;
+}
