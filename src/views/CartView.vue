@@ -122,11 +122,17 @@ onMounted(() => validateLogin())
           </thead>
           <tbody>
             <tr v-for="{ r, plant } in items" :key="r.id">
-              <td>
+              <td class="plant-col">
                 <div class="d-flex align-items-center gap-2">
                   <div class="thumb rounded overflow-hidden"><PlantImage :title="plant.wikiTitle" :alt="plant.name" /></div>
                   <div>
                     <RouterLink :to="`/details/${plant.id}`" class="fw-bold">{{ plant.name }}</RouterLink>
+                    <div class="small text-body-secondary">{{ plant.description }}</div>
+                    <details class="small">
+                      <summary>Sadnja i nega</summary>
+                      <div><b>Sadnja:</b> {{ plant.planting }}</div>
+                      <div><b>Nega:</b> {{ plant.care }}</div>
+                    </details>
                     <div class="small text-body-secondary" v-if="r.note">Napomena: {{ r.note }}</div>
                   </div>
                 </div>
@@ -164,9 +170,7 @@ onMounted(() => validateLogin())
                   <button type="button" class="btn btn-sm btn-danger m-1" @click="remove(r, plant.name)">
                     <i class="fa-solid fa-trash"></i> Obriši</button>
                 </template>
-                <button v-else type="button" class="btn btn-sm btn-danger m-1" disabled
-                  title="Brisanje je moguće samo za biljke sa statusom „pristiglo“">
-                  <i class="fa-solid fa-trash"></i> Obriši</button>
+                <small v-else class="text-body-secondary">Otkazano: brisanje je moguće samo za „pristiglo“</small>
               </td>
             </tr>
           </tbody>
@@ -186,6 +190,10 @@ onMounted(() => validateLogin())
 </template>
 
 <style scoped>
+.plant-col {
+  min-width: 300px;
+}
+
 .thumb {
   width: 64px;
   flex-shrink: 0;
